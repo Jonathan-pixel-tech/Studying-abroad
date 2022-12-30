@@ -1,0 +1,54 @@
+{%extends 'base.html'%}
+{%load static%}
+
+{%block title%} Dashboard | Studying abroad {%endblock%}
+
+{%block css-auxiliar%}
+<link rel="stylesheet" href="{%static 'css/estiloIndex.css'%}"> {%endblock%}
+
+{%block conteudo%}
+
+<section class="container">
+    {%include 'messages.html'%}
+
+    <div class="row">
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <h1 class="text-fluid"> Olá {{user.first_name}}, Bem-vindo!</h1>
+        </div>
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <a class="btn  mt-2  text-fluid" href="{%url 'logout'%}" style="font-size: 20px;">Clique aqui para sair da
+                conta</a>
+        </div>
+    </div>
+
+
+
+    {%if user.is_superuser%}
+    <h2>Você possui status de admin e pode adicionar novas universidades</h2>
+    <h6>Use o formulário abaixo para cadastrar universidades</h6>
+    <form action="{%url 'dashboard'%}" method="POST">
+        {%csrf_token%}
+        <table class="table">
+            {{form}}
+            <tr>
+                <td colspan="2">
+                    <button type="submit" class="btn btn-primary ">Cadastrar </button>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+
+    
+
+    {%endif%}
+
+
+
+
+
+
+
+
+</section>
+{%endblock%}

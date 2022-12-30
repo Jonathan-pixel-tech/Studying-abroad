@@ -1,0 +1,38 @@
+{%extends 'base.html'%}
+{%load static%}
+
+{%block title%} Dashboard | Studying abroad {%endblock%}
+
+{%block css-auxiliar%}
+<link rel="stylesheet" href="{%static 'css/estiloIndex.css'%}"> {%endblock%}
+
+{%block conteudo%}
+<section class="container">
+    {%include 'messages.html'%}
+
+    <div class="row">
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <h1 class="text-fluid"> Olá {{user.first_name}}, Bem-vindo!</h1>
+        </div>
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <a class="btn  mt-2  text-fluid" href="{%url 'logout'%}" style="font-size: 20px;">Clique aqui para sair da
+                conta</a>
+        </div>
+    </div>
+<h5 class="mt-5">O college List é essencial para organizar suas opções e aumentar sua chance de ser aceito</h5>
+    <h6 class="mt-5 mb-4">Faça o seu e esteja mais preparado</h6>
+    <form action="{%url 'dashboard_usuario'%}" method="POST">
+        {%csrf_token%}
+        <table class="table">
+            {{form.as_p}}
+            <tr>
+                <td colspan="2">
+                    <button type="submit" class="btn btn-cor btn-lg btn-block ">Adicionar universidade </button>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <a class="btn btn-cor mb-5 btn-lg btn-block" href="{%url 'collegeList'%}">Clique aqui para ver seu college list</a>
+</section>
+{%endblock%}

@@ -1,0 +1,291 @@
+{%extends 'base.html'%}
+{%load static%}
+
+{%block title%} Home | Studying Abroad {%endblock%}
+{%block css-auxiliar%}
+<link rel="stylesheet" href="{%static 'css/estiloIndex.css'%}"> {%endblock%}
+
+{%block conteudo%}
+
+
+<!--Section superior-->
+<section class=" caixa-superior mb-5 ">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 alinha-texto  mb-5 margin-top">
+                <div id="carousel-pfi" class="carousel slide" data-ride="carousel">
+                    <div class="careousel-inner">
+                        <div class="carousel-item active">
+                            <h5>Studying Abroad. Bem-vindo ao site que carimbará seu passaporte em direção
+                                à universidade dos sonhos E o melhor, com bolsa de até 100%
+                            </h5>
+                        </div>
+
+                        <div class="carousel-item">
+                            <h5>Todos os anos universidades do mundo todo abrem vagas e bolsas para alunos
+                                internacionais, Algumas incluem até um salário mensal. Não fique de fora
+                                dessa
+                            </h5>
+                        </div>
+                    </div>
+                    <!-- Controles -->
+
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</section>
+<!--fim Section superior-->
+
+<!--Section cards superiores-->
+<section>
+    <div class="container">
+        <h4 class="alinha-texto">Você poderá estudar em universidades como</h4>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="{%static 'images/frenteUniversidadeDaFlorida.jpg'%}" width="100%" class="card-img-top"
+                        alt="...">
+
+                    <div class="card-body">
+                        <h5 class="card-title">Universidade da Flórida</h5>
+                        <p class="card-text">Com taxa de aceitação anual de 31,1% a universidade da florida pode ser uma
+                            opção pra
+                            você que quer estudar com oportunidade de bolsa em um clima que não seja frio
+                        </p>
+                        <a href="{% url 'detalha' 1 %}" class="btn btn-cor">Conheça Melhor</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="{%static 'images/harvard-business-school-Internet.jpg'%}" width="100%" class="card-img-top"
+                        alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Universidade de Harvard</h5>
+                        <p class="card-text">Quem nunca ouviu falar na famosa universidade de Harvard, a universidade
+                            que está sempre no
+                            ranking das melhores do mundo aceita todo anos centenas de estudantes internacionais, e
+                            alguns com bolsa
+                        </p>
+                        <a href="{% url 'detalha' 2 %}" class="btn btn-cor">Conheça Melhor</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="{%static 'images/uni_coimbra.jpg'%}" width="100%" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Universidade de Coimbra</h5>
+                        <p class="card-text">
+                            Uma das melhores universidades de Portugal, e não só isso, uma das mais antigas do mundo fundada em 1290
+                            é uma aula de história. Perfeito para aqueles que querem uma oportunidade no exterior mas não falam
+                            Inglês
+                        </p>
+                        <a href="{% url 'detalha' 3 %}" class="btn btn-cor">Conheça Melhor</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <a class="btn btn-cor btn-lg btn-block mt-5" href="{%url 'universidades'%}">Veja outras universidades aqui</a>
+    </div>
+</section>
+<!--Fim Section cards superiores-->
+
+<!-- Início section newsletter-->
+<section class="newsletter container">
+    
+    <div class="row">
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 mt-5 mb-5">
+            <img src=" {%static 'images/imagemNews.jpg'%} " width="100%">
+        </div>
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6- mt-5 mb-5">
+            <h6 class="mt-4">Cadastre seu email para receber nossas novidades</h6>
+
+            <form  method="post" action="{%url 'index'%}" >
+                {% csrf_token %}
+                {%include 'messages.html'%}
+                <input class="form-control" type="text" name="email_news" placeholder="Digite seu email">
+                <button type="submit" class="btn btn-cor mt-3 ml-4">Cadastrar</button>
+            </form>
+
+        </div>
+    </div>
+</section>
+<!-- Fim section newsletter-->
+
+
+<section>
+
+    <div class=" img-meio mt-2 alinha-texto">
+        <div class="container mt-5">
+            <h6 class="lead">Sim é possível estudar no país dos sonhos, conhecer lugares novos, viver experiências
+                incríveis.
+                Porém o processo para isso é diferente do que estamos acostumados. Conhecer esse processo e saber se
+                organizar
+                para o application é essencial.
+            </h6>
+        </div>
+
+        <img src=" {%static 'images/HarvardFrenteInternet.jpg'%}" class="img-fluid" alt="" width="100%">
+    </div>
+
+</section>
+
+<!--Section  informações-->
+<section  class=" container  mt-5">
+
+    <div class="row">
+        <div class="col-md-7 col-sm-7">
+            <div  >
+              <p>
+                Cada país e universidade tem seus métodos próprios de admissão,
+                onde levam aspectos diferentes em conta ao aceitar seus estudantes. Porém também há
+                muitas semelhanças como por exemplo extracurriculares, as universidades no exterior levam 
+                esse ponto muito em consideração. Outro parâmetro essencial é o teste de proficiência
+                no idioma do país da universidade desejada, como por exemplo o TOEFL no caso da língua inglesa.
+                Com fim de te ajudar a descobrir seu destino e se organizar para seu application no exterior,
+                planificamos aqui todas as informações necessárias para você se aparelhar e realizar o seu sonho
+                de estudar naquela universidade ou naquele país
+              </p>
+            </div>
+        </div>
+        <div class="col-md-5 d-none d-md-block ">
+            <img src=" {%static 'images/arte-livros.png'%}" width="60%" class="img-fluid mt-5" alt="">
+        </div>
+    </div>
+
+</section>
+<!--Section  informações-->
+
+<!--Section vídeos recomendações-->
+<section class="container mt-5 mb-4">
+    <h4 class="alinha-texto">As melhores recomendações de canais e vídeos a gente apresenta!</h4>
+    <div class="row">
+        <div class="col-md-6">
+            <iframe width="450" height="315" src="https://www.youtube.com/embed/sJ1O6_EDUmQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="col-md-6">
+            <iframe width="450" height="315" src="https://www.youtube.com/embed/BI7Jbz4cTjY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+</section>
+<!--Section vídeos recomendações-->
+
+<!--Seção países-->
+<section class=" mt-5">
+    <h4 class="alinha-texto">Conheça um pouco mais sobre o processo de cada país</h4>
+
+    <div class="container">
+
+        <div class="row">
+  
+          <div class="col-md-3">
+            <div class="card">
+              <img src="{%static 'images/bandeira-australia.png'%}" width="194px" height="150px" class="card-img-top img-fluid" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Estude na austrália</h5>
+                <p class="card-text">A austrália é um pais na Oceania conhecido por suas belezas e biodiversidade. E acima de tudo por sua educação de ponta</p>
+                <a href="{%url 'mostra_pais' 3%}" class="btn btn-cor">Descubra...</a>
+              </div>
+            </div>
+          </div>
+  
+          <div class="col-md-3">
+            <div class="card">
+              <img src="{%static 'images/bandeira-canada.png'%}" width="194px" height="150px" class="card-img-top img-fluid" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Estude no canadá</h5>
+                <p class="card-text">O Canadá é um país de clima frio localizado na América do Norte. Um país desenvolvido com Universidades de excelência e altamente reconhecidas </p>
+                <a href="{%url 'mostra_pais' 2%}" class="btn btn-cor">Descubra...</a>
+              </div>
+            </div>
+          </div>
+  
+          <div class="col-md-3">
+            <div class="card">
+              <img src="{%static 'images/bandeira-EUA.png'%}" width="194px" height="150px" class="card-img-top img-fluid" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Estude nos Estados Unidos</h5>
+                <p class="card-text">País que dispensa apresentações, está sempre no topo quando o assunto é educação. Será aqui a sua universidade?</p>
+                <a href="{%url 'mostra_pais' 1%}" class="btn btn-cor">Descubra...</a>
+              </div>
+            </div>
+          </div>
+  
+          <div class="col-md-3">
+            <div class="card">
+              <img src="{%static 'images/bandeira-ReinoUnido.jpg'%}" width="194px" height="150px" class="card-img-top img-fluid" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Estude no Reino Unido</h5>
+                <p class="card-text">Prepare as malas e a saudação, pois a terra da família real está te esperando. Com sua educação de ponta é um excelente destino para você que deseja ótimas instituiçoes altamente reconhecidas</p>
+                <a href="{%url 'mostra_pais' 4 %}" class="btn btn-cor">Descubra...</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+    
+</section>
+<!--Fim seção países-->
+
+<!-- Seção apresentando possibilidade enem-->
+<section class="container mt-5">
+    <h2 class="alinha-texto">Que tal não precisar passar por processos que você não conhece?</h2>
+    <h4 class="alinha-texto">Universidades que aceitam enem</h4>
+
+    <div class="row">
+        <div class="col-md-5 d-none d-md-block ">
+            <img src=" {%static 'images/enem.png'%}" width="80%" class="img-fluid mt-5" alt="">
+        </div>
+
+
+        <div class="col-md-7 col-sm-7 mt-5">
+            <div class="mt-5 aumenta"  >
+              <ul class="lead">
+                <li>Universidade De Coimbra</li>
+                <li>Universidade de Nova York</li>
+                <li>Northeastern</li>
+                <li>Universidade de toronto</li>
+                <li>Universidade de Alvarge</li>
+              </ul>
+            </div>
+        </div>
+
+    </div>
+
+
+</section>
+
+
+<!--Seção vídeos enem -->
+<section class="container">
+    
+    <div class="row">
+        <div class="col-md-6">
+            <iframe width="450" height="315" src="https://www.youtube.com/embed/Bn3dgm6NX0Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="col-md-6">
+            <iframe width="450" height="315" src="https://www.youtube.com/embed/yO_sYJju6YU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>  
+
+</section>
+
+<!-- fim Seção vídeos enem -->
+
+
+
+{%endblock%}

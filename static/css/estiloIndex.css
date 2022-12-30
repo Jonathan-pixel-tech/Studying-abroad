@@ -1,0 +1,19 @@
+
+.caixa-superior{
+    color: white;
+    background-color: #0A0812;
+    
+}
+.alinha-texto{
+    text-align: center; 
+}
+.margin-top{
+    margin-top: 80px;
+}
+.btn-cor{
+    background-color: #0A0812;
+    color: white;
+}
+.btn-cor:hover{
+    color: #76C8E0;
+}

@@ -1,0 +1,37 @@
+{%extends 'base.html'%}
+
+{%block title%} Sobre | Studying Abroad {%endblock%}
+
+{%block conteudo%}
+    <section class="container">
+    <h1>Universidades </h1>
+
+    <div class="card-columns mt-4">
+
+        {% for universidade in universidades %}
+        <div class="card">
+   
+            <div class="card-body">
+                <h5 class="card-title">
+                    <a href="{% url 'detalha' universidade.id %}">
+                        {{ universidade.nome_universidade }}
+                    </a>
+                </h5>
+                
+                <p class="card-text">
+                    <small>
+                        {{universidade.localizacao_pais}} | taxa de aceitação {{universidade.taxa_aceitacao}}%
+                    </small>
+                </p>
+                <div class="text-right">
+                    <a href="{% url 'detalha' universidade.id %}" class="btn btn-outline-secondary">Ler mais...</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    
+    
+    </div>
+</section>
+
+{%endblock%}

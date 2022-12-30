@@ -1,0 +1,43 @@
+
+
+.caixa-logo {
+    height: 100vh;
+    background-image: url(../images/MITFotoExpedicao.jpg);
+    background-size: cover;
+}
+
+
+.centraliza-texto {
+    text-align: center;
+}
+
+.centraliza-horizontal {
+    margin-left: auto;
+    margin-right: auto;
+
+    display: block;
+
+}
+
+.centraliza-vertical {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+input#email, input#nome, input#senha, input#repetir-senha{
+    background-repeat: no-repeat;
+    padding-left: 30px;
+    padding-bottom: 10px;
+    background-position: 5px;
+    
+}
+
+input#senha, input#repetir-senha{
+    background-image: url(../images/icone-cadeado.png);
+}
+input#nome{
+    background-image: url(../images/icone-usuario.png);
+}
+input#email{
+    background-image: url(../images/iconeEmail.png);
+}

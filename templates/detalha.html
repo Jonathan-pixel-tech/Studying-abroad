@@ -1,0 +1,25 @@
+{%extends 'base.html'%}
+
+{%block title%} Detalhes | Studying abroad {%endblock%}
+
+{%block conteudo%}
+<section class="container">
+    <h1>{{universidade.nome_universidade}}</h1>
+    <br>
+    <h3>História</h3>
+    <p class="lead"> {{universidade.historia}} </p>
+    <br>
+    <h3>Cultura</h3>
+    <p class="lead">{{universidade.cultura}}</p>
+    <br>
+    {%if universidade.taxa_aceitacao != None %}
+        <h3>Taxa de aceitação</h3>
+        <p class="lead"> {{universidade.taxa_aceitacao}} </p>
+    {%endif%}
+    <h3>Bolsa</h3>
+    <p class="lead"> {{universidade.descricao_bolsa}} </p>
+    <br>
+    <h3>Processo de Application</h3>
+    <p class="mb-5 lead"> {{universidade.descricao_application}} </p>
+</section>
+{%endblock%}

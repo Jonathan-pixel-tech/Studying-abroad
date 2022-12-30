@@ -1,0 +1,12 @@
+html, body, .tela-login{
+    height: 100%;
+    overflow-x: hidden;
+}
+body{
+    background-image: url(../images/MITFotoExpedicao.jpg); 
+    background-size: cover;
+}
+.caixa-login{
+    background-color: white;
+    border-radius: 10px;
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+{%load static%}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro | Studying Abroad</title>
+
+    <link rel="shortcut icon" href="{% static 'images/android-chrome-192x192-fococlipping-standard.png' %}">
+    <link rel="stylesheet" href="{%static 'css/estilocadastro.css'%}">
+    <link rel="stylesheet" href="{%static 'css/bootstrap.min.css'%}">
+</head>
+
+<body>
+    <section class="caixa container-fluid ">
+        <div class="row">
+            <div class="col-md-6 caixa-logo">
+                <div class="centraliza-vertical">
+                    <a href="{%url 'index'%}"> <img class="centraliza-horizontal"
+                            src="{%static 'images/android-chrome-192x192.png'%}">
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-6 caixa-form centraliza-texto">
+                <form method="post" action="{%url 'cadastro'%}" class="centraliza-vertical">
+                    {%csrf_token%}
+                    {%include 'messages.html'%}
+                    <h1>Crie sua conta</h1>
+                    <div class="form-group mb-4">
+                        <input class="form-control" id="nome" type="text" name="nome" placeholder="Digite seu nome" >
+                    </div>
+                    <div class="form-group mb-4">
+                        <input class="form-control" id="email" type="email" name="email" placeholder="Digite seu email">
+                    </div>
+
+                    <div class="form-group">
+                        <input class="form-control" id="senha" type="password" name="senha" placeholder="Digite sua senha">
+                    </div>
+
+                    <div class="form-group">
+                        <input class="form-control" id="repetir-senha" type="password" name="repetirSenha" placeholder="Repita sua senha">
+                    </div>
+
+                    <button type="submit" class="btn btn-dark mt-3 ml-4">Cadastrar</button>
+                    
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <script src="{%static 'js/jquery-3.3.1.slim.min.js'%}"></script>
+    <script src="{%static 'js/popper.min.js'%}"></script>
+    <script src="{%static 'js/bootstrap.min.js'%}"></script>
+</body>
+
+</html>

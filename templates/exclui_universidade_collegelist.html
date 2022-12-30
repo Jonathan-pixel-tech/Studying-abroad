@@ -1,0 +1,19 @@
+{%extends 'base.html'%}
+
+{%block title%} Detalhes | Studying abroad {%endblock%}
+
+{%block conteudo%}
+<section class="container">
+    <form method="post">
+        {% csrf_token %}
+        Você tem certeza que quer excluir a universidade  <b>{{ universidade.universidade_desejada  }} da sua college list</b>?
+        <br><br>
+        {{form.as_p}}
+        <button type="button">
+            <a href="{% url 'collegeList' %}" class="btn btn-warning">Cancelar</a>
+        </button>
+        <button type="submit" class="btn btn-danger">Excluir</button>
+    </form>
+
+</section>
+{%endblock%}

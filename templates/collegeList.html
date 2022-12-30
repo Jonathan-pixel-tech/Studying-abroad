@@ -1,0 +1,69 @@
+{%extends 'base.html'%}
+{%block title%} College List | Studying Abroad {%endblock%}
+{%load static%}
+
+{%block css-auxiliar%}
+<link rel="stylesheet" href="{%static 'css/estiloIndex.css'%}"> 
+{%endblock%}
+
+{%block conteudo%}
+<section class="container">
+        {%if colleges|length > 0 %}
+                
+                <div class="card-body">
+                        <p class="card-text">Aqui está a lista de <code>Collegelists</code> cadastradas.</p>
+                        {% for college in colleges %}
+                        <table class="table table-light table-striped table-hover align-middle">
+                                <thead>
+                                        <tr>
+                                                <th scope="col">Universidade</th>
+                                        </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                                <td> <a href="{%url 'detalha' college.universidade_desejada.id %}">{{ college.universidade_desejada }}</a></td>
+
+                                                <td class="text-center">
+                                                        
+                                                        <a href="{%url 'deleta' college.id %}" class="btn btn-danger btn-sm">
+                                                                Excluir
+                                                        </a>
+                                                        
+                                                </td>
+                                        </tr>
+
+                                </tbody>
+                                {%endfor%}
+                                
+                        </table>
+                        <div class="text-end">
+                                <a href="{% url 'dashboard' %}" class="btn btn-cor btn-lg btn-block  mb-5">
+                                        Voltar à dashboard
+                                </a>
+                        </div>
+                        
+
+                        {%else%}
+
+                                <div class="text-center mt-5 mb-5 jumbotron">
+                                        <h5>Nenhuma <code>Collegelist</code> cadastrada ainda.</h5>
+                                </div>
+
+                                <hr />
+                                <div class="text-end">
+                                        <a href="{% url 'dashboard' %}" class="btn btn-primary btn-lg btn-block  mb-5">
+                                                Cadastrar Collegelist
+                                        </a>
+                                </div>
+                        
+
+                {%endif%}
+        </div>
+
+
+   
+
+
+
+</section>
+{%endblock%}
