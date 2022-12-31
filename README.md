@@ -24,6 +24,7 @@ Site criado com Django, HTML, CSS, Bootstrap e MySQL. Voltado a ajudar alunos a 
 <ul> 
   <li>Acessar conteúdos:</li>
   <li>Criar college list</li>
+  <li>Cadastrar conteúdos </li>
   <li>Realizar Cadastro</li>
   <li>Realizar Login</li>
 </ul>
